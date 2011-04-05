@@ -1,0 +1,37 @@
+html {
+	background: url(/bg.gif) no-repeat bottom left fixed;
+	background-size: 50%;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	margin: auto;
+}
+
+#container {
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+header {
+	display: inline-block;
+	font-family: "Amaranth";
+	font-size: 300%;
+	margin: 120px 0 0 0;
+}
+#f {
+	padding: 40px;
+	border-radius: 8px;
+	display: inline-block;
+	margin: 0 auto;
+	background: rgba(255, 255, 255, 0.6);
+}
+#f input {
+	font-size: 120%;
+}
+#f input#q {
+	width: 500px;
+}

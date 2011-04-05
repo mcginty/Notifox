@@ -1,0 +1,15 @@
+<%inherit file="/base/base.mako" />
+
+<%def name="head_tags()">
+	<title>Register</title>
+</%def>
+
+<h1>Join the hive</h1>
+
+${h.form('/register', method='post')}
+
+:q
+
+${h.end_form()}
+
+</html>
