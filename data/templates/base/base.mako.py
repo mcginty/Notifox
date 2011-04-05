@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 5
-_modified_time = 1302008099.695755
+_modified_time = 1302011696.7248211
 _template_filename=u'/var/pylons/notifox/notifox/templates/base/base.mako'
 _template_uri=u'/base/base.mako'
 _template_cache=cache.Cache(__name__, _modified_time)
@@ -24,7 +24,7 @@ def render_body(context,**pageargs):
         __M_writer(u'<!doctype html>\n<html>\n\t<head>\n\t\t<meta charset="utf-8">\n\t\t<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">\n\t\t<title>')
         # SOURCE LINE 6
         __M_writer(escape(self.title()))
-        __M_writer(u'</title>\n\t\t<meta name="description" content="">\n\t\t<meta name="author" content="">\n\n\t\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t\t<link rel="stylesheet" href="/generic.css" type="text/css">\n\t\t<link href=\'http://fonts.googleapis.com/css?family=Amaranth\' rel=\'stylesheet\' type=\'text/css\'>\n\t\t<link rel="shortcut icon" href="/favicon.ico">\n\t\t<link rel="apple-touch-icon" href="/apple-touch.icon.png">\n\t\t<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>\n\t</head>\n\n\t<body>\n\t<div id="container">\n\t\t')
+        __M_writer(u'</title>\n\t\t<meta name="description" content="">\n\t\t<meta name="author" content="">\n\n\t\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t\t<link rel="stylesheet" href="/generic.css" type="text/css">\n\t\t<link href=\'http://fonts.googleapis.com/css?family=Neuton|Ubuntu\' rel=\'stylesheet\' type=\'text/css\'>\n\t\t<link rel="shortcut icon" href="/favicon.ico">\n\t\t<link rel="apple-touch-icon" href="/apple-touch.icon.png">\n\t\t<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>\n\t</head>\n\n\t<body>\n\t<div id="container">\n\t\t')
         # SOURCE LINE 20
         __M_writer(escape(self.header()))
         __M_writer(u'\n\t\t')

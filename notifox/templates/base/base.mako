@@ -9,7 +9,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/generic.css" type="text/css">
-		<link href='http://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Neuton|Ubuntu' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch.icon.png">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>

@@ -1,5 +1,6 @@
-from sqlalchemy import Column
-from sqlalchemy.types import Integer, String
+from sqlalchemy import Column, ForeignKey
+from sqlalchemy.types import Integer, String, DateTime
+from sqlalchemy.orm import relation, backref
 
 from notifox.model.meta import Base
 
@@ -10,6 +11,7 @@ class User(Base):
 	name = Column(String(100))
 	password = Column(String(100))
 	email = Column(String(100))
+	pages = relation("Page", backref="user")
 
 	def __init__(self, name='', email=''):
 		self.name = name

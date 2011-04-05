@@ -4,10 +4,10 @@ html {
 }
 
 #footer {
+	font-family: "Neuton";
 	position: absolute;
-	bottom: 0px;
-	left: 0px;
-	margin: auto;
+	bottom: 5px;
+	left: 5px;
 }
 
 #container {
@@ -18,7 +18,7 @@ html {
 
 header {
 	display: inline-block;
-	font-family: "Amaranth";
+	font-family: "Neuton";
 	font-size: 300%;
 	margin: 120px 0 0 0;
 }
@@ -30,6 +30,7 @@ header {
 	background: rgba(255, 255, 255, 0.6);
 }
 #f input {
+	font-family: "Ubuntu";
 	font-size: 120%;
 }
 #f input#q {

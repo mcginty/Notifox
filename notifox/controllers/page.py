@@ -23,13 +23,12 @@ from notifox.lib.base import BaseController, render
 log = logging.getLogger(__name__)
 absolute_url = "http://localhost:5000"
 
-def add_base_href(content, link):
+def add_base_href(root, link):
     """
     Locate the <head> tag, and insert our base tag.
     <base> tells the browser to use that path for relative links over the current URI.
     """
     try:
-        root = lxml.html.fromstring(content)
         if root.find('html') != None:
             head = root.find('html').find('head')
         else:
@@ -40,14 +39,13 @@ def add_base_href(content, link):
         head.insert(0, base)
     except Exception as detail:
         raise Exception(detail)
-    return tostring(root)
+    return
 
-def add_js(content, link):
+def add_js(root, link):
     """
     Insert JavaScript for our node selector at the end of the body.
     """
     try:
-        root = lxml.html.fromstring(content)
         settings = etree.Element("script")
         settings.text = ' \n \
             nodeselector = {}; \n \
@@ -60,7 +58,30 @@ def add_js(content, link):
         root.append(nsjs)
     except Exception as detail:
         raise Exception(detail)
-    return tostring(root)
+    return
+
+def add_helpbar(root):
+    """
+    Insert JavaScript for our node selector at the end of the body.
+    """
+    try:
+        helpbar = etree.Element("div", 
+                id="notifox_help_bar",
+                style="position:fixed; bottom: 0px; left: 0px; width: 100%; border: 1px solid black; background: black; color: white; z-index: 999; padding: 25px; font-size: 150%; font-family: Georgia, Tahoma, Arial, sans-serif; background-image: -webkit-linear-gradient(top, #020202, #111111); box-shadow: 0px -5px 20px rgba(0, 0, 0, 1.0); text-align: center;")
+
+        descspan = etree.Element("div")
+        descspan.text = 'Select an element on the page for Notifox to track.'
+        hintspan = etree.Element("div",  style="font-size: 60%")
+        hintspan.text = 'Hint: hit the Control button on your keyboard to select the element underneath your current one.'
+
+        helpbar.append(etree.Element("img", src=absolute_url + "/upboat.png", style="position:absolute; left: 200px; vertical-align: center;"))
+        helpbar.append(descspan)
+        helpbar.append(hintspan)
+
+        root.append(helpbar)
+    except Exception as detail:
+        raise Exception(detail)
+    return
 
 class PageController(BaseController):
 
@@ -78,10 +99,13 @@ class PageController(BaseController):
         link = request.params['q']
         content = urllib2.urlopen(link).read();
         try:
+            root = lxml.html.fromstring(content)
             # find the <head> tag and insert our <base href=%url%> to make sure imgs/etc work still
-            content = add_base_href(content, link)
+            add_base_href(root, link)
             # insert our javascript at the end of the body
-            content = add_js(content, link)
+            add_js(root, link)
+            add_helpbar(root)
+            content = tostring(root)
         except Exception as detail:
             c.details = detail
             return "error. details: %s, url: %s" % (detail, request.params['q'])
