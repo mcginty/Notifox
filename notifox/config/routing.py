@@ -21,6 +21,8 @@ def make_map(config):
     map.connect('/', controller='index', action='index')
     map.connect('/add', controller='page', action='add')
     map.connect('/selected/', controller='page', action='selected')
+    map.connect('/register', controller='auth', action='register')
+    map.connect('/login', controller='auth', action='login')
 
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')

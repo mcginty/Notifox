@@ -4,13 +4,17 @@
 	<title>Register</title>
 </%def>
 
-	<form name="form" action="/register" method="post">
+<%def name="header()">
+	<header>Register</header>
+</%def>
+
+	<form name="form" id="register" action="/register" method="post">
 		<fieldset>
 			<legend>Your Information</legend>
 			<ol>
 				<li>
 					<label for="username">Username</label>
-					<input type="text" name="username" id="username" placeholder="bozarking" required autofocus></li>
+					<input type="text" name="username" id="username" placeholder="username" required autofocus></li>
 				</li>
 				<li>
 					<label for="password">Password</label>

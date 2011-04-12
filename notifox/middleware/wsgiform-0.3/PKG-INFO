@@ -1,0 +1,30 @@
+Metadata-Version: 1.0
+Name: wsgiform
+Version: 0.3
+Summary: WSGI form parsing and validation middleware
+Home-page: UNKNOWN
+Author: L. C. Rees
+Author-email: lcrees@gmail.com
+License: BSD
+Description: WSGI middleware for validating form submissions
+        and parsing them into dictionaries, individual WSGI 'environ' dictionary
+        entries, cgi.FieldStorage instances, or keyword arguments passed to a
+        WSGI application. Supports automatically escaping and sterilizing form
+        submissions.
+        
+        # Simple wsgiform usage format example:
+        
+        from wsgiform import form
+        
+        @form()
+        def app(environ, start_response):
+        return environ['wsgiform.dict']['name']
+Keywords: WSGI dispatch middleware web HTTP decorators
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware

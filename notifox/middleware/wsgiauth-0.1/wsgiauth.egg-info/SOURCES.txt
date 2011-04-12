@@ -1,0 +1,16 @@
+ez_setup.py
+setup.py
+wsgiauth/__init__.py
+wsgiauth/base.py
+wsgiauth/basic.py
+wsgiauth/cookie.py
+wsgiauth/digest.py
+wsgiauth/ip.py
+wsgiauth/openID.py
+wsgiauth/url.py
+wsgiauth/util.py
+wsgiauth.egg-info/PKG-INFO
+wsgiauth.egg-info/SOURCES.txt
+wsgiauth.egg-info/dependency_links.txt
+wsgiauth.egg-info/top_level.txt
+wsgiauth.egg-info/zip-safe
