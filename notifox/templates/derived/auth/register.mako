@@ -8,7 +8,7 @@
 	<header>Register</header>
 </%def>
 
-	<form name="form" id="register" action="/register" method="post">
+	<form name="form" id="register" class="auth" action="/register" method="post">
 		<fieldset>
 			<legend>Your Information</legend>
 			<ol>

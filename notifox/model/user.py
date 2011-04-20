@@ -13,8 +13,9 @@ class User(Base):
 	email = Column(String(100))
 	pages = relation("Page", backref="user")
 
-	def __init__(self, name='', email=''):
+	def __init__(self, name, password, email):
 		self.name = name
+		self.password = password
 		self.email = email
 
 	def __repr__(self):

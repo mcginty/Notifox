@@ -18,12 +18,23 @@ def make_map(config):
     map.connect('/error/{action}', controller='error')
     map.connect('/error/{action}/{id}', controller='error')
 
+    # Page section
     map.connect('/', controller='index', action='index')
     map.connect('/add', controller='page', action='add')
+    map.connect('/selected', controller='page', action='selected')
     map.connect('/selected/', controller='page', action='selected')
-    map.connect('/register', controller='auth', action='register')
-    map.connect('/login', controller='auth', action='login')
 
+    # Auth section
+    map.connect('/register', controller='auth', action='register_post', conditions=dict(method=['POST']))
+    map.connect('/register', controller='auth', action='register')
+    map.connect('/register/', controller='auth', action='register')
+
+    map.connect('/login', controller='auth', action='login_post', conditions=dict(method=['POST']))
+    map.connect('/login', controller='auth', action='login')
+    map.connect('/login/', controller='auth', action='login')
+    map.connect('/logout', controller='auth', action='logout')
+
+    #map.connect('/{controller}', action='index')
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')
 

@@ -1,8 +1,16 @@
-<%inherit file="/base.mako" />
+<%inherit file="/base/base.mako" />
 
-	<form name="form" action="/login" method="post">
+<%def name="head_tags()">
+	<title>Login</title>
+</%def>
+
+<%def name="header()">
+	<header>Login</header>
+</%def>
+
+	<form name="form" id="login" class="auth" action="/login" method="post">
 		<fieldset>
-			<legend>Hive Info</legend>
+			<legend>Credentials</legend>
 			<ol>
 				<li>
 					<label for="username">Username</label>

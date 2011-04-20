@@ -58,8 +58,13 @@ form#f input#q {
 	background-color: rgba(255, 255, 255, 0.7);
 	z-index: 4;
 }
-
-form#register {
+.error_msg {
+	margin: 5px;
+	padding: 5px;
+	background-color: #660000;
+	color: white;
+}
+form.auth {
 	background: rgb(255, 255, 255);
 	margin: 50px auto;
 	-moz-border-radius: 5px;
@@ -69,20 +74,20 @@ form#register {
 	padding: 20px;
 	width: 400px;
 }
-form#register fieldset {
+form.auth fieldset {
 	border: none;
 	margin-bottom: 10px;
 }
-form#register fieldset:last-of-type {
+form.auth fieldset:last-of-type {
 	margin-bottom: 0;
 }
-form#register legend {
+form.auth legend {
 	font-size: 16px;
 	font-weight: bold;
 	padding-bottom: 10px;
 	text-shadow: 0 1px 1px #ccc;
 }
-form#register ol li {
+form.auth ol li {
 	background: #b9cf6a;
 	background: rgba(255,255,255,.3);
 	border-color: #e3ebc3;
@@ -97,7 +102,7 @@ form#register ol li {
 	padding: 5px 10px;
 	margin-bottom: 2px;
 }
-form#register label {
+form.auth label {
 	float: left;
 	text-align: left;
 	margin-left: 10px;
@@ -105,7 +110,7 @@ form#register label {
 	width: 90px;
 	padding-top: 3px;
 }
-form#register input:not([type=submit]) {
+form.auth input:not([type=submit]) {
 	font-family: "Ubuntu", Georgia, Serif;
 	background: rgb(250, 250, 250);
 	border: 2px solid rgb(240, 240, 240);
@@ -117,11 +122,11 @@ form#register input:not([type=submit]) {
 	padding: 5px;
 	width: 250px;
 }
-form#register input:focus {
+form.auth input:focus {
 	border: 2px solid rgba(0, 0, 0, 0.1);
 	background: white;
 }
-form#register input[type=submit] {
+form.auth input[type=submit] {
 	font-family: "Ubuntu", Georgia, serif;
 	padding: 5px 10px;
 }

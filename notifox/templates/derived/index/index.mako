@@ -9,7 +9,11 @@
 
 <%def name="header()">
 	<header class="home">Codename Notifox</header><br>
+	% if 'username' not in session:
 	<a href="/login">Login</a> <a id="reg" href="#register">Register</a><br>
+	% else:
+	Welcome, ${session['username']}. <a href="/logout">Logout</a><br>
+	% endif
 </%def>
 
 <form name="f" id="f" method="get" action="/add">

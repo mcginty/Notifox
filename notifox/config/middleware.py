@@ -45,7 +45,7 @@ def make_app(global_conf, full_stack=True, static_files=True, **app_conf):
     app = SessionMiddleware(app, config)
 
     # CUSTOM MIDDLEWARE HERE (filtered by error handling middlewares)
-    app = AuthenticationMiddleware(app, config)
+    #app = AuthenticationMiddleware(app, config)
 
     if asbool(full_stack):
         # Handle Python exceptions

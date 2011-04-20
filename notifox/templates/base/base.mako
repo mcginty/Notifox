@@ -19,6 +19,9 @@
 	<body>
 	<div id="container">
 		${self.header()}
+		% if 'error' in session:
+		<div class="error_msg">${session['error']}</div>
+		% endif
 		${self.tabs()}
 		${next.body()}
 		${self.footer()}

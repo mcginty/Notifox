@@ -68,7 +68,7 @@ nodeselector.ns.nodeSelector = function () {
     }
 
     var mouseover = function(ev) {
-        if(ev.target != this || ev.target.tagName == "HTML") {
+        if(ev.target != this || ev.target.tagName == "HTML" || ev.target.className == "no_highlight") {
             return true;
         }
         // Prevent usual event handlers from functioning
@@ -103,7 +103,7 @@ nodeselector.ns.nodeSelector = function () {
     };
 
     var click =  function (ev) {
-        if(ev.target != this){
+        if(ev.target != this || ev.target.tagName == "HTML" || ev.target.className == "no_highlight") {
             return true;
         }
         ev.preventDefault(); ev.stopPropagation();

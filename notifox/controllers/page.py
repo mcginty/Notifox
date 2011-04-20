@@ -67,14 +67,18 @@ def add_helpbar(root):
     try:
         helpbar = etree.Element("div", 
                 id="notifox_help_bar",
-                style="position:fixed; bottom: 0px; left: 0px; width: 100%; border: 1px solid black; background: black; color: white; z-index: 999; padding: 25px; font-size: 150%; font-family: Georgia, Tahoma, Arial, sans-serif; background-image: -webkit-linear-gradient(top, #020202, #111111); box-shadow: 0px -5px 20px rgba(0, 0, 0, 1.0); text-align: center;")
+                style="position:fixed; bottom: 0px; left: 0px; width: 100%; border: 1px solid black; background: black; color: white; z-index: 999; padding: 25px; font-size: 150%; font-family: Georgia, Tahoma, Arial, sans-serif; background-image: -webkit-linear-gradient(top, #020202, #111111); box-shadow: 0px -5px 20px rgba(0, 0, 0, 1.0); text-align: center; opacity: 0.9;")
+        helpbar.attrib['class'] = 'no_highlight'
 
         descspan = etree.Element("div")
         descspan.text = 'Select an element on the page for Notifox to track.'
-        hintspan = etree.Element("div",  style="font-size: 60%")
+        hintspan = etree.Element("div", style="font-size: 60%")
         hintspan.text = 'Hint: hit the Control button on your keyboard to select the element underneath your current one.'
-
-        helpbar.append(etree.Element("img", src=absolute_url + "/upboat.png", style="position:absolute; left: 200px; vertical-align: center;"))
+        descspan.attrib['class'] = 'no_highlight'
+        hintspan.attrib['class'] = 'no_highlight'
+        upboat = etree.Element("img", src=absolute_url + "/upboat.png", style="position:absolute; left: 200px; vertical-align: center;")
+        upboat.attrib['class'] = 'no_highlight'
+        helpbar.append(upboat)
         helpbar.append(descspan)
         helpbar.append(hintspan)
 
