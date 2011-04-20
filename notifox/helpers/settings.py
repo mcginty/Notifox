@@ -1,0 +1,4 @@
+# settings.py
+# Settings for the ChastityBelt authentication framework.
+
+salt = "m1St8bnL33x3zecXIGtOV5CYcZSXN6pF0ZrCT7QTZLJlp9bPCemgPxu1a7P21Ze9s51Jbr1UVi1gmEw0oO2QItD0395ewXVKHrpCYIgTZhDhDCByar12Zd5mX3jWPsdKa"
