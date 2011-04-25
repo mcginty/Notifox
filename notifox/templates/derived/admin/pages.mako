@@ -9,6 +9,6 @@
 </%def>
 
 <ul>
-% for user in c.users:
-	<li>${user.name}</li>
+% for page in c.pages:
+	<li>${page.name} - ${page.last_crawled}<a href="/admin/users?del=${page.id}">del</a></li>
 % endfor

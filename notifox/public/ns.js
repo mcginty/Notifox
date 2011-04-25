@@ -120,8 +120,8 @@ nodeselector.ns.nodeSelector = function () {
             if (nodeselector.ns.doneURL.indexOf("?") == -1) { nodeselector.ns.doneURL += "?"; }
             else { nodeselector.ns.doneURL += "&"; }
             var params = {
-                "xpath" : xpath, 
-                "referer" : window.location.href
+                "xpath" : xpath,
+                "referer" : nodeselector.ns.initURL
             };
             if (typeof nodeselector.ns.params != "undefined") { params['params'] = nodeselector.ns.params; }
 
