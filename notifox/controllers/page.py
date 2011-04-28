@@ -133,7 +133,7 @@ class PageController(BaseController):
                 me = Session.query(User).filter_by(name=session['username']).first()
                 # Make sure this *exact* combination isn't in the database already.
                 if len(Session.query(Page).filter_by(user_id=me.id, url=request.params['referer'], xpath=request.params['xpath']).all()) == 0:
-                    page = Page("Page Name", request.params['referer'], request.params['xpath'], me.id)
+                    page = Page(request.params['referer'], request.params['referer'], request.params['xpath'], me.id)
                     Session.add(page)
                     Session.commit()
                 else:
@@ -141,4 +141,4 @@ class PageController(BaseController):
                     return c.errors
         else:
             chunk = "[no text]"
-        return "xpath: %s<br>from url: %s<br>chunk: %s" % (request.params['xpath'], request.params['referer'], chunk)
+        redirect(url(controller='auth', action='pages'))

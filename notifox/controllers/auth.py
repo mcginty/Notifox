@@ -23,7 +23,9 @@ class AuthController(BaseController):
 
     def login_post(self):
         if verify(request.params['username'], request.params['password']):
+            me = self.users.filter_by(name=request.params['username'])
             session['username'] = request.params['username']
+            session['id'] = me.id
         else:
             session['error'] = 'Invalid credentials.'
         session.save()
