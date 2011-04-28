@@ -93,10 +93,18 @@ class PageController(BaseController):
     def __before__(self):
         """ Called before any function does anything. """
         c.errors = []
+        if 'username' in session:
+            c.me = Session.query(User).filter_by(name='username'
 
     def index(self):
         # Return a rendered template
         return render('/derived/page/page.mako')
+
+    def show(self):
+        if 'username' in session:
+            me = Session.query(Page).filter_by(user_id=session['id']).first()
+            c.pages = me.pages
+            render render('/derived/page/all.mako')
 
     def add(self):
         """
